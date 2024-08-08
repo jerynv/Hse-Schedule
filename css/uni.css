@@ -161,7 +161,8 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background: var(--backgroundcolorlighter);
+    background: black;
+    border: solid 1px #27272a;
     width: 350px;
     padding: 10px;
     border-radius: 10px;
@@ -180,7 +181,6 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background: var(--backgroundcolorlighter);
     width: 350px;
     padding: 10px;
     border-radius: 10px;
@@ -237,7 +237,8 @@ body {
     justify-content: flex-end;
     padding-right: 10px;
     position: fixed;
-    background: var(--backgroundcolorlighter);
+    background: none;
+    border: solid 2px #27272a;
     width: 30px;
     height: 40px;
     border-radius: 0px 20px 20px 0px;
@@ -265,13 +266,11 @@ body {
     width: 40px;
 }
 
-
 .colorbtn i {
     font-size: 28px;
     color: var(--firstcolor);
     transition: ease-in-out .3s;
 }
-
 
 @media only screen and (max-width: 700px) {
     .pickerholder {

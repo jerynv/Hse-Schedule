@@ -66,15 +66,15 @@
     color: var(--ptextcolor);
     display: flex;
     text-align: center;
-    vertical-align: middle;
     line-height: 40px;
     justify-content: center;
     align-items: center;
-    background: var(--backgroundcolorlighter);
+    background: none;
     margin: 5px;
     height: 40px;
     width: 40px;
     border-radius: 25px;
+    border: solid 1px #27272a;
     transition: ease-in-out .3s;
 }
 
@@ -96,7 +96,8 @@
     margin: 0px;
     margin-top: 20px;
     border-radius: 5px;
-    background: var(--backgroundcolorlighter);
+    background: none;
+    border: solid 1px #27272a;
     transition: ease-in-out .3s;
 }
 

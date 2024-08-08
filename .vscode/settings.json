@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.host": "10.102.15.145"
+    "liveServer.settings.host": "localhost",
+    "liveServer.settings.port": 5501
 }

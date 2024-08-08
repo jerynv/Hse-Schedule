@@ -33,29 +33,30 @@ var periodsub;
 var days = {
     Aug:
     {
+        8:2,
         9: 1,
-        10: 2,
-        11: 1,
+        10: 0,
+        11: 0,
         12: 2,
-        13: 0,
-        14: 0,
+        13: 1,
+        14: 2,
         15: 1,
         16: 2,
-        17: 1,
-        18: 2,
+        17: 0,
+        18: 0,
         19: 1,
-        20: 0,
-        21: 0,
+        20: 2,
+        21: 1,
         22: 2,
         23: 1,
-        24: 2,
-        25: 1,
-        26: 2,
-        27: 0,
-        28: 0,
-        29: 1,
-        30: 2,
-        31: 1,
+        24: 0,
+        25: 2,
+        26: 1,
+        27: 2,
+        28: 1,
+        29: 2,
+        30: 0,
+        31: 0,
     },
     Sep:
     {
@@ -286,12 +287,10 @@ var days = {
         29: 1,
         30: 2,
         31: 1,
-    },
-    
+    }, 
 }
 var colorview = 0;
 day = getdaynum();
-
 
 function startloader() {
     setInterval(() => {
@@ -337,8 +336,8 @@ function calc(sec) {
         } else {
             if (Passing == true) {
                 if (passingnum == 0) {
-                    start = secondAfy(8, 00, 00);
-                    end = secondAfy(8, 30, 00);
+                    start = secondAfy(8, 0, 0);
+                    end = secondAfy(8, 30, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'School starts in');
                     if (current <= 0) {
@@ -346,8 +345,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 1) {
-                    start = secondAfy(9, 57, 00);
-                    end = secondAfy(10, 05, 00);
+                    start = secondAfy(9, 57, 0);
+                    end = secondAfy(10, 5, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -355,8 +354,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 2) {
-                    start = secondAfy(11, 28, 00);
-                    end = secondAfy(11, 36, 00);
+                    start = secondAfy(11, 28, 0);
+                    end = secondAfy(11, 36, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -364,8 +363,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 'a') {
-                    start = secondAfy(11, 58, 00);
-                    end = secondAfy(12, 06, 00);
+                    start = secondAfy(11, 58, 0);
+                    end = secondAfy(12, 6, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -373,8 +372,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 'b') {
-                    start = secondAfy(12, 28, 00);
-                    end = secondAfy(12, 33, 00);
+                    start = secondAfy(12, 28, 0);
+                    end = secondAfy(12, 33, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -382,8 +381,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 'c') {
-                    start = secondAfy(12, 58, 00);
-                    end = secondAfy(13, 03, 00);
+                    start = secondAfy(12, 58, 0);
+                    end = secondAfy(13, 3, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -391,8 +390,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 3) {
-                    start = secondAfy(13, 29, 00);
-                    end = secondAfy(13, 37, 00);
+                    start = secondAfy(13, 29, 0);
+                    end = secondAfy(13, 37, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -400,8 +399,8 @@ function calc(sec) {
                     }
                 }
                 else if (passingnum == 'path2') {
-                    start = secondAfy(13, 22, 00);
-                    end = secondAfy(13, 29, 00);
+                    start = secondAfy(13, 22, 0);
+                    end = secondAfy(13, 29, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Passing period ends in');
                     if (current <= 0) {
@@ -411,33 +410,33 @@ function calc(sec) {
             }
             if (lunchtime == true) {
                 if (lunch == 'a') {
-                    if (secondAfy(11, 58, 00) >= sec && sec >= secondAfy(11, 28, 00)) {
-                        start = secondAfy(11, 28, 00);
-                        end = secondAfy(11, 58, 00);
+                    if (secondAfy(11, 58, 0) >= sec && sec >= secondAfy(11, 28, 0)) {
+                        start = secondAfy(11, 28, 0);
+                        end = secondAfy(11, 58, 0);
                         current = sub(sec, end);
                         updatescreen(period, timeAfy(current), lunch, 'Lunch ends in');
                     } else lunchtime = false;
                 }
                 if (lunch == 'b') {
-                    if (secondAfy(11, 58, 00) <= sec && sec <= secondAfy(12, 28, 00)) {
-                        start = secondAfy(11, 58, 00);
-                        end = secondAfy(12, 28, 00);
+                    if (secondAfy(11, 58, 0) <= sec && sec <= secondAfy(12, 28, 0)) {
+                        start = secondAfy(11, 58, 0);
+                        end = secondAfy(12, 28, 0);
                         current = sub(sec, end);
                         updatescreen(period, timeAfy(current), lunch, 'Lunch ends in');
                     } else lunchtime = false;
                 }
                 if (lunch == 'c') {
-                    if (secondAfy(12, 28, 00) <= sec && sec <= secondAfy(12, 58, 00)) {
-                        start = secondAfy(12, 28, 00);
-                        end = secondAfy(12, 58, 00);
+                    if (secondAfy(12, 28, 0) <= sec && sec <= secondAfy(12, 58, 0)) {
+                        start = secondAfy(12, 28, 0);
+                        end = secondAfy(12, 58, 0);
                         current = sub(sec, end);
                         updatescreen(period, timeAfy(current), lunch, 'Lunch ends in');
                     } else lunchtime = false;
                 }
                 if (lunch == 'd') {
-                    if (secondAfy(12, 59, 00) <= sec && sec <= secondAfy(13, 29, 00)) {
-                        start = secondAfy(12, 59, 00);
-                        end = secondAfy(13, 29, 00);
+                    if (secondAfy(12, 59, 0) <= sec && sec <= secondAfy(13, 29, 0)) {
+                        start = secondAfy(12, 59, 0);
+                        end = secondAfy(13, 29, 0);
                         current = sub(sec, end);
                         updatescreen(period, timeAfy(current), lunch, 'Lunch ends in');
                     } else lunchtime = false
@@ -445,32 +444,32 @@ function calc(sec) {
             }
             if (Passing != true) {
                 if (period == "p1") {
-                    start = secondAfy(13, 37, 00);
-                    end = secondAfy(14, 22, 00);
+                    start = secondAfy(13, 37, 0);
+                    end = secondAfy(14, 22, 0);
                     current = sub(sec, end);
                     updatescreen(4, timeAfy(current), lunch, 'Pathways A ends in');
                 }
                 if (period == "p2") {
-                    start = secondAfy(14, 29, 00);
-                    end = secondAfy(15, 00, 00);
+                    start = secondAfy(14, 29, 0);
+                    end = secondAfy(15, 0, 0);
                     current = sub(sec, end);
                     updatescreen(4, timeAfy(current), lunch, 'Pathways B ends in');
                 }
                 if (period == 1) {
-                    start = secondAfy(8, 30, 00);
-                    end = secondAfy(9, 57, 00);
+                    start = secondAfy(8, 30, 0);
+                    end = secondAfy(9, 57, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'Period ends in');
                 }
                 if (period == 2) {
                     if (lunch == 'a') {
-                        start = secondAfy(10, 05, 00);
-                        end = secondAfy(11, 28, 00);
+                        start = secondAfy(10, 5, 0);
+                        end = secondAfy(11, 28, 0);
                         current = sub(sec, end);
                         updatescreen(period, timeAfy(current), lunch, 'lunch starts in');
                     } else {
-                        start = secondAfy(10, 05, 00);
-                        end = secondAfy(11, 28, 00);
+                        start = secondAfy(10, 5, 0);
+                        end = secondAfy(11, 28, 0);
                         current = sub(sec, end);
                         updatescreen(period, timeAfy(current), lunch, 'Period ends in');
                     }
@@ -478,21 +477,21 @@ function calc(sec) {
                 if (lunchtime != true) {
                     if (lunch == 'a') {
                         if (period == 3) {
-                            start = secondAfy(12, 06, 00);
-                            end = secondAfy(13, 29, 00);
+                            start = secondAfy(12, 6, 0);
+                            end = secondAfy(13, 29, 0);
                             current = sub(sec, end);
                             updatescreen(period, timeAfy(current), lunch, 'Period ends in');
                         }
                     } else if (lunch == 'b') {
                         if (period == 3) {
                             if (periodsub == 'bbl') {
-                                start = secondAfy(11, 36, 00);
-                                end = secondAfy(11, 58, 00);
+                                start = secondAfy(11, 36, 0);
+                                end = secondAfy(11, 58, 0);
                                 current = sub(sec, end);
                                 updatescreen(period, timeAfy(current), lunch, 'Lunch starts in');
                             } else if (periodsub == 'abl') {
-                                start = secondAfy(12, 33, 00);
-                                end = secondAfy(13, 29, 00);
+                                start = secondAfy(12, 33, 0);
+                                end = secondAfy(13, 29, 0);
                                 current = sub(sec, end);
                                 updatescreen(period, timeAfy(current), lunch, 'Period ends in');
                             }
@@ -501,18 +500,18 @@ function calc(sec) {
                     else if (lunch == 'c' || lunch == 'd') {
                         if (period == 3) {
                             if (periodsub == 'bcl') {
-                                start = secondAfy(11, 36, 00);
-                                end = secondAfy(12, 28, 00);
+                                start = secondAfy(11, 36, 0);
+                                end = secondAfy(12, 28, 0);
                                 current = sub(sec, end);
                                 updatescreen(period, timeAfy(current), lunch, 'Lunch starts in');
                             } else if (periodsub == 'acl') {
-                                start = secondAfy(13, 03, 00);
-                                end = secondAfy(13, 29, 00);
+                                start = secondAfy(13, 3, 0);
+                                end = secondAfy(13, 29, 0);
                                 current = sub(sec, end);
                                 updatescreen(period, timeAfy(current), lunch, 'Period ends in');
                             } else if (periodsub == 'bdl') {
-                                start = secondAfy(11, 36, 00);
-                                end = secondAfy(12, 59, 00);
+                                start = secondAfy(11, 36, 0);
+                                end = secondAfy(12, 59, 0);
                                 current = sub(sec, end);
                                 updatescreen(period, timeAfy(current), lunch, 'lunch starts in');
                             }
@@ -520,8 +519,8 @@ function calc(sec) {
                     }
                 }
                 if (period == 4) {
-                    start = secondAfy(13, 37, 00);
-                    end = secondAfy(15, 00, 00);
+                    start = secondAfy(13, 37, 0);
+                    end = secondAfy(15, 0, 0);
                     current = sub(sec, end);
                     updatescreen(period, timeAfy(current), lunch, 'School ends in');
                 }
@@ -549,141 +548,141 @@ function sub(end, start) {
 
 
 function getperiod(sec) {
-    if (secondAfy(08, 00, 00) <= sec) {
+    if (secondAfy(8, 0, 0) <= sec) {
         Passing = true
         passingnum = 0;
         endofday = false
     }
-    if (secondAfy(08, 30, 00) <= sec) {
+    if (secondAfy(8, 30, 0) <= sec) {
         Passing = false
         period = 1;
     }
 
 
-    if (secondAfy(09, 57, 00) <= sec) {
+    if (secondAfy(9, 57, 0) <= sec) {
         Passing = true;
         passingnum = 1;
         period = 2;
     }
-    if (secondAfy(10, 05, 00) <= sec) {
+    if (secondAfy(10, 5, 0) <= sec) {
         period = 2
         Passing = false
     }
     if (lunch == 'a') {
-        if (secondAfy(11, 28, 00) <= sec) {
+        if (secondAfy(11, 28, 0) <= sec) {
             lunchtime = true;
             period = 3;
         }
-        if (secondAfy(11, 58, 00) <= sec) {
+        if (secondAfy(11, 58, 0) <= sec) {
             passingnum = 'a';
             Passing = true;
             period = 3;
         }
-        if (secondAfy(12, 06, 00) <= sec) {
+        if (secondAfy(12, 6, 0) <= sec) {
             period = 3;
         }
     }
     if (lunch == 'b') {
-        if (secondAfy(11, 28, 00) <= sec) {
+        if (secondAfy(11, 28, 0) <= sec) {
             lunchtime = false
             Passing = true;
             passingnum = 2;
             period = 3;
         }
-        if (secondAfy(11, 36, 00) <= sec) {
+        if (secondAfy(11, 36, 0) <= sec) {
             Passing = false
             period = 3;
             periodsub = 'bbl';
         }
-        if (secondAfy(11, 58, 00) <= sec) {
+        if (secondAfy(11, 58, 0) <= sec) {
             lunchtime = true;
             period = 3
         }
-        if (secondAfy(12, 28, 00) <= sec) {
+        if (secondAfy(12, 28, 0) <= sec) {
             lunchtime = false;
             Passing = true;
             passingnum = 'b';
             period = 3;
             periodsub = 'abl';
         }
-        if (secondAfy(12, 33, 00) <= sec) {
+        if (secondAfy(12, 33, 0) <= sec) {
             period = 3;
             periodsub = 'abl';
         }
     }
     if (lunch == 'c') {
-        if (secondAfy(11, 28, 00) <= sec) {
+        if (secondAfy(11, 28, 0) <= sec) {
             lunchtime = false
             Passing = true;
             passingnum = 2;
             period = 3;
         }
-        if (secondAfy(11, 36, 00) <= sec) {
+        if (secondAfy(11, 36, 0) <= sec) {
             Passing = false;
             period = 3;
             periodsub = 'bcl';
         }
-        if (secondAfy(12, 28, 00) <= sec) {
+        if (secondAfy(12, 28, 0) <= sec) {
             lunchtime = true;
             period = 3;
         }
-        if (secondAfy(12, 58, 00) <= sec) {
+        if (secondAfy(12, 58, 0) <= sec) {
             lunchtime = false
             Passing = true;
             passingnum = 'c';
             period = 3;
             periodsub = 'acl'
         }
-        if (secondAfy(13, 03, 00) <= sec) {
+        if (secondAfy(13, 3, 0) <= sec) {
             period = 3
             periodsub = 'acl';
         }
     }
     if (lunch == 'd') {
-        if (secondAfy(11, 28, 00) <= sec) {
+        if (secondAfy(11, 28, 0) <= sec) {
             lunchtime = false
             Passing = true;
             passingnum = 2;
             period = 3;
         }
-        if (secondAfy(11, 36, 00) <= sec) {
+        if (secondAfy(11, 36, 0) <= sec) {
             Passing = false;
             period = 3
             periodsub = 'bdl'
         }
-        if (secondAfy(12, 59, 00) <= sec) {
+        if (secondAfy(12, 59, 0) <= sec) {
             lunchtime = true;
         }
 
     }
-    if (secondAfy(13, 29, 00) <= sec) {
+    if (secondAfy(13, 29, 0) <= sec) {
         lunchtime = false
         passingnum = 3
         Passing = true;
         period = 4;
     }
     if (day == 2) {
-        if (secondAfy(13, 37, 00) <= sec) {
+        if (secondAfy(13, 37, 0) <= sec) {
             Passing = false
             period = "p1";
         }
-        if (secondAfy(14, 22, 00) <= sec) {
+        if (secondAfy(14, 22, 0) <= sec) {
             Passing = true;
             passingnum = 'path2';
             period = "p2";
         }
-        if (secondAfy(14, 30, 00) <= sec) {
+        if (secondAfy(14, 30, 0) <= sec) {
             Passing = false
             period = "p2";
         }
     } else {
-        if (secondAfy(13, 37, 00) <= sec) {
+        if (secondAfy(13, 37, 0) <= sec) {
             Passing = false
             period = 4
         }
     }
 
-    if (secondAfy(15, 00, 00) < sec || sec > secondAfy(00, 00, 00) && sec < secondAfy(8, 00, 00)) {
+    if (secondAfy(15, 0, 0) < sec || sec > secondAfy(0, 0, 0) && sec < secondAfy(8, 0, 0)) {
         endofday = true;
         period = 0;
     }
