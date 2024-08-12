@@ -300,7 +300,7 @@ function startloader() {
                 $('.loader').removeClass('loadview')
             }
         }, 400);
-    }, 3000);
+    }, Math.floor(Math.random() * 3000));
 
 }
 
