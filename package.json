@@ -18,6 +18,7 @@
   "homepage": "https://github.com/jeryn-oss/j-projects#readme",
   "dependencies": {
     "confetti-js": "^0.0.18",
+    "devtools-detector": "^2.0.20",
     "jquery": "^3.6.0",
     "moment": "^2.29.4",
     "swup": "^2.0.14"
